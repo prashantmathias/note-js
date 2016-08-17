@@ -1,10 +1,9 @@
 (function(exports) {
   function NoteListView(notelist) {
-    this._noteLists = [];
-    this._noteLists.push(notelist);
+    this._noteList = notelist;
   }
-  NoteListView.prototype.getNoteLists = function () {
-    return this._noteLists;
+  NoteListView.prototype.getNoteList = function () {
+    return this._noteList;
   };
   exports.NoteListView = NoteListView;
 })(this);

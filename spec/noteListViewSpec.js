@@ -8,7 +8,7 @@ function setNoteListView() {
 describe( "The note list view", function() {
   it( "It can create a new list view and store note list", function() {
     setNoteListView();
-    asserts.isTrue(noteListView.getNoteLists() instanceof NoteList);
+    asserts.isTrue(noteListView.getNoteList() instanceof NoteList);
 
   });
 });
