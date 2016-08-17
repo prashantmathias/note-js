@@ -8,7 +8,7 @@
     var htmlString = "<ul>";
     for(var noteIndex = 0; noteIndex < noteArray.length; noteIndex++){
       var note = noteArray[noteIndex].text();
-      htmlString += "<li>" + note + "</li>";
+      htmlString += "<li>" + note.substr(0,20) + "</li>";
     }
     return htmlString + "</ul>";
   };

@@ -8,7 +8,7 @@ var noteController = new NoteController(noteList);
 
 function appDisplaysNote(){
   noteController.displayView();
-  assert.isTrue( div.innerHTML === "<ul><li>Favourite drink: seltzer</li></ul>");
+  assert.isTrue( div.innerHTML === "<ul><li>Favourite drink: sel</li></ul>");
 };
 
 appDisplaysNote();
