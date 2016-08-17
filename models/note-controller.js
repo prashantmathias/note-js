@@ -1,7 +1,6 @@
 (function(exports){
   var NoteController = function(noteList){
     this._noteList = noteList;
-    this._noteList.store("Favourite drink: seltzer");
     this._noteListView = new NoteListView(noteList);
   };
 

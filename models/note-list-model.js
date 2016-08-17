@@ -13,6 +13,15 @@
       return this._listArr;
     }
 
+    NoteList.prototype.listById = function (id) {
+      var showNote
+      this._listArr.forEach(function(note){
+        if(note._id === id) {
+           showNote = note;
+        }
+      });
+      return showNote
+    }
 
     exports.NoteList = NoteList;
 

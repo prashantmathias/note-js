@@ -1,6 +1,9 @@
 (function(exports) {
 
+  var IDcounter = -1
+
   function Note(text) {
+    this._id = IDcounter++
     this.save_note = text;
   }
 
