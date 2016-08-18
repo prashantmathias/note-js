@@ -34,7 +34,6 @@ describe("Controller", function() {
     }
 
     controller.insertHTML('app');
-    console.log(appDiv.innerHTML);
 
     var element = document.getElementById("app");
     assert.isTrue(element.innerHTML === controller._note_markup );
