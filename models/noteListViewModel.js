@@ -14,7 +14,7 @@
       return "";
     } else {
       markup += notes_array.map(function(note) {
-        return note.getText();
+        return note.getText().substr(0,20);
       }).join("</div></li><li><div>");
       return markup += "</div></li></ul>";
     }

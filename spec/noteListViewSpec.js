@@ -26,5 +26,10 @@ describe( "The note list view", function() {
     assert.isTrue(noteListView.getHTML() === "");
   });
 
+  it("only displays the first 20 characters", function() {
+    setNoteListView();
+    noteList.addNote("Testing twice really sucks!")
+    assert.isTrue(noteListView.getHTML() === "<ul><li><div>Testing twice really</div></li></ul>")
+  });
 
 });

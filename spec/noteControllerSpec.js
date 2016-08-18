@@ -19,7 +19,7 @@ describe("Controller", function() {
     var controller = new NoteController(note_list);
     note_list.addNote("Favourite drink: seltzer");
     controller.setupView();
-    assert.isTrue(controller._note_markup === "<ul><li><div>Favourite drink: seltzer</div></li></ul>" );
+    assert.isTrue(controller._note_markup === "<ul><li><div>Favourite drink: sel</div></li></ul>" );
   });
 
   it("can return note's text formatted in HTML", function () {
