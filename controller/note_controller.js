@@ -1,9 +1,9 @@
 (function(exports) {
 
-  // function NoteController(noteList) {
-  //   this._noteList = noteList;
-  //   this._note_markup = "";
-  // }
+  function NoteController(noteList) {
+    this._noteList = noteList;
+    // this._note_markup = "";
+  }
   //
   // NoteController.prototype.setupView = function () {
   //   var list_view = new NoteListView(this._noteList);
@@ -17,5 +17,5 @@
   // };
   //
   //
-  // exports.NoteController = NoteController;
+  exports.NoteController = NoteController;
 })(this);
