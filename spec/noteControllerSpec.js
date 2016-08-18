@@ -23,24 +23,21 @@ describe("Controller", function() {
   });
 
   it("can return note's text formatted in HTML", function () {
-
-    var appDiv = document.createElement('div', {id: 'app'} );
-
     var note_list = new NoteList();
     var controller = new NoteController(note_list);
     note_list.addNote("Favourite drink: seltzer");
-    controller.insertHTML("app");
+    controller.setupView();
 
+    var appDiv = document.createElement('div', {id: 'app'} );
     document.getElementById = function () {
       return appDiv;
     }
-    document.getElementById = document.__proto__.getElementById;
+
+    controller.insertHTML('app');
+    console.log(appDiv.innerHTML);
 
     var element = document.getElementById("app");
-    assert.isTrue(element.innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>" );
-
-
-
-
+    assert.isTrue(element.innerHTML === controller._note_markup );
   });
+
 });
