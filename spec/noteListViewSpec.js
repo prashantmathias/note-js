@@ -23,7 +23,7 @@ describe( "The note list view", function() {
 
   it("getHTML doesn't returns markup if there's no notes", function() {
     setNoteListView();
-    assert.isTrue(noteListView.getHTML() === null);
+    assert.isTrue(noteListView.getHTML() === "");
   });
 
 

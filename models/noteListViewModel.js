@@ -11,7 +11,7 @@
     var markup = "<ul><li><div>";
     var notes_array = this._noteList.getNotes();
     if (notes_array.length === 0) {
-      return null;
+      return "";
     } else {
       markup += notes_array.map(function(note) {
         return note.getText();
