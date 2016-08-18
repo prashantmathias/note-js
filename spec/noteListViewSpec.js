@@ -8,7 +8,7 @@ function setNoteListView() {
 describe( "The note list view", function() {
   it( "It can create a new list view and store note list", function() {
     setNoteListView();
-    asserts.isTrue(noteListView.getNoteList() instanceof NoteList);
+    assert.isTrue(noteListView.getNoteList() instanceof NoteList);
 
   });
 
@@ -18,12 +18,12 @@ describe( "The note list view", function() {
     setNoteListView();
     noteList.addNote("Testing sucks!")
     noteList.addNote("I hate testing!")
-    asserts.isTrue(noteListView.getHTML() === "<ul><li><div>Testing sucks!</div></li><li><div>I hate testing!</div></li></ul>");
+    assert.isTrue(noteListView.getHTML() === "<ul><li><div>Testing sucks!</div></li><li><div>I hate testing!</div></li></ul>");
   });
 
   it("getHTML doesn't returns markup if there's no notes", function() {
     setNoteListView();
-    asserts.isTrue(noteListView.getHTML() === null);
+    assert.isTrue(noteListView.getHTML() === null);
   });
 
 
