@@ -14,7 +14,7 @@
       return "";
     } else {
       markup += notes_array.map(function(note) {
-        return note.getText().substr(0,20);
+        return "<a href=\"#"+ note.id + "\">" + note.getText().substr(0,20) + "</a>";
       }).join("</div></li><li><div>");
       return markup += "</div></li></ul>";
     }

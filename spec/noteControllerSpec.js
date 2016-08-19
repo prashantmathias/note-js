@@ -22,4 +22,25 @@ describe("Controller", function() {
 
   });
 
+  it("can load content for single note page", function() {
+    var noteList = new NoteList();
+    noteList.addNote("new note");
+    var note = noteList.getNotes()[0];
+    var singleNote = new SingleNoteView(note);
+    var controller = new NoteController(noteList)
+
+    var appDiv = document.createElement('div', {id: 'app'} );
+    controller.getElement = function () {
+      return appDiv;
+    }
+
+    controller.insertHTML('app');
+    window.location.hash = "#" + note.id
+
+    assert.isEqual(appDiv.innerHTML, singleNote.getNoteHTML() )
+
+
+
+  });
+
 });
