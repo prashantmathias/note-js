@@ -21,6 +21,13 @@
     });
   }
 
+  NoteController.prototype.listenForSubmitEvents = function() {
+    window.addEventListener("submit", function(event){
+      event.preventDefault();
+      console.log(event);
+    })
+  }
+
   NoteController.prototype.showNote = function() {
     var id = parseInt(window.location.hash.split("#")[1]);
     var note = this._noteList.getNoteById(id);

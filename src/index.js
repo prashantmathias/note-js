@@ -6,3 +6,4 @@ var note_controller = new NoteController(note_list);
 
 note_controller.insertHTML("app");
 note_controller.listenForHashChange();
+note_controller.listenForSubmitEvents();
