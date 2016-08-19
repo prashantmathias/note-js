@@ -24,7 +24,7 @@
   NoteController.prototype.listenForSubmitEvents = function() {
     window.addEventListener("submit", function(event){
       event.preventDefault();
-      console.log(event);
+      console.log(event.target["text"].value);
     })
   }
 
