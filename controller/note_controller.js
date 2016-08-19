@@ -22,9 +22,11 @@
   }
 
   NoteController.prototype.listenForSubmitEvents = function() {
+    var self = this;
     window.addEventListener("submit", function(event){
       event.preventDefault();
-      console.log(event);
+      var noteText = event.target["text"].value;
+      self.addNote(noteText);
     })
   }
 

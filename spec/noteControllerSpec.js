@@ -6,6 +6,20 @@ describe("Controller", function() {
     assert.isTrue(controller._noteList === note_list);
   });
 
+  it("can add a new note and then displays in on the page", function() {
+    var noteList = new NoteList();
+    var controller = new NoteController(noteList);
+    var noteListView = new NoteListView(noteList);
+    var appDiv = document.createElement('div', {id: 'app'} );
+    controller.getElement = function () {
+      return appDiv;
+    }
+    controller.addNote("Some new note I just entered, kind of");
+
+    assert.isEqual(appDiv.innerHTML, noteListView.getHTML());
+
+  });
+
   it("can return note's text formatted in HTML", function () {
     var note_list = new NoteList();
     var controller = new NoteController(note_list);
@@ -33,11 +47,12 @@ describe("Controller", function() {
     controller.getElement = function () {
       return appDiv;
     }
-    
+
     controller.insertHTML('app');
     window.location.hash = "#" + note.id;
     controller.showNote();
     assert.isEqual(appDiv.innerHTML, singleNote.getHTML() );
+    window.location.hash = "";
   });
 
 });
