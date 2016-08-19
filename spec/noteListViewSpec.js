@@ -12,13 +12,15 @@ describe( "The note list view", function() {
 
   });
 
-
-
   it("has a method that returns a HTML markup if there's notes", function() {
     setNoteListView();
-    noteList.addNote("Testing sucks!")
-    noteList.addNote("I hate testing!")
-    assert.isTrue(noteListView.getHTML() === "<ul><li><div>Testing sucks!</div></li><li><div>I hate testing!</div></li></ul>");
+    noteList.addNote("Testing sucks!");
+    noteList.addNote("I hate testing!");
+    htmlString = "<ul>" +
+                   "<li><div><a href=\"#" + noteList.getNotes()[0].id + "\">Testing sucks!</a></div></li>" +
+                   "<li><div><a href=\"#" + noteList.getNotes()[1].id + "\">I hate testing!</a></div></li>" +
+                 "</ul>";
+    assert.isEqual(noteListView.getHTML(), htmlString);
   });
 
   it("getHTML doesn't returns markup if there's no notes", function() {
@@ -28,8 +30,9 @@ describe( "The note list view", function() {
 
   it("only displays the first 20 characters", function() {
     setNoteListView();
-    noteList.addNote("Testing twice really sucks!")
-    assert.isTrue(noteListView.getHTML() === "<ul><li><div>Testing twice really</div></li></ul>")
+    noteList.addNote("Testing twice really sucks!");
+    htmlString = "<ul><li><div><a href=\"#" + noteList.getNotes()[0].id + "\">Testing twice really</a></div></li></ul>";
+    assert.isEqual(noteListView.getHTML(), htmlString);
   });
 
 });

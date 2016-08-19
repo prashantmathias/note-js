@@ -4,6 +4,7 @@ describe("Note List Model", function() {
     var note_list = new NoteList();
     note_list.addNote("first note");
     note_list.addNote("second note");
+
     assert.isTrue(note_list.getNotes()[0].id === 0);
     assert.isTrue(note_list.getNotes()[1].id === 1);
   });
@@ -27,6 +28,5 @@ describe("Note List Model", function() {
     note_list.addNote("note1");
     note_list.addNote("note2");
     assert.isTrue(note_list.getNotes() === note_list._allNotes );
-
   });
 });
