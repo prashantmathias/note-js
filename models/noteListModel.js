@@ -13,5 +13,15 @@ NoteList.prototype.getNotes = function () {
   return this._allNotes;
 };
 
+NoteList.prototype.getNoteById = function(id) {
+  var noteFound;
+  this._allNotes.forEach(function(note){
+    if (note.id === id) {
+      noteFound = note;
+    }
+  });
+  return noteFound;
+}
+
   exports.NoteList = NoteList;
 })(this);

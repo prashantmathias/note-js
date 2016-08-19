@@ -29,4 +29,13 @@ describe("Note List Model", function() {
     note_list.addNote("note2");
     assert.isTrue(note_list.getNotes() === note_list._allNotes );
   });
+
+  it ("can return a specific note by ID", function() {
+    var noteList = new NoteList();
+    noteList.addNote("simple test note");
+    var note = noteList.getNotes()[0];
+    var id = note.id;
+
+    assert.isEqual(noteList.getNoteById(id), note);
+  })
 });

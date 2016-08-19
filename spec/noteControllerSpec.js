@@ -18,7 +18,7 @@ describe("Controller", function() {
 
     controller.insertHTML('app');
 
-    assert.isTrue(appDiv.innerHTML === controller._note_markup.getHTML() );
+    assert.isTrue(appDiv.innerHTML === controller._view.getHTML() );
 
   });
 
@@ -27,20 +27,17 @@ describe("Controller", function() {
     noteList.addNote("new note");
     var note = noteList.getNotes()[0];
     var singleNote = new SingleNoteView(note);
-    var controller = new NoteController(noteList)
+    var controller = new NoteController(noteList);
 
     var appDiv = document.createElement('div', {id: 'app'} );
     controller.getElement = function () {
       return appDiv;
     }
-
+    
     controller.insertHTML('app');
-    window.location.hash = "#" + note.id
-
-    assert.isEqual(appDiv.innerHTML, singleNote.getNoteHTML() )
-
-
-
+    window.location.hash = "#" + note.id;
+    controller.showNote();
+    assert.isEqual(appDiv.innerHTML, singleNote.getHTML() );
   });
 
 });
